@@ -83,6 +83,31 @@ describe "Examples of patterns" do
     result.should == 's?'                                    
   end
   
+  it "should match zero or more character" do
+    result = Regexpgen::Component.match_zero_or_more('s')
+    result.should == 's*'                                    
+  end
+  
+  it "should match one or more character" do
+    result = Regexpgen::Component.match_one_or_more('s')
+    result.should == 's+'                                    
+  end
+  
+  it "should match exactly given number of digits" do
+    result = Regexpgen::Component.match_digits_exactly(3)
+    result.should == '\d{3}'                                    
+  end
+  
+  it "should match any string containing a given range" do
+    result = Regexpgen::Component.match_digits_with_range(1,10)
+    result.should == '\d{1,10}'                                    
+  end
+
+  it "should match n or more repetitions" do
+    result = Regexpgen::Component.match_n_or_more(4)
+    result.should == '\d{4,}'                                    
+  end
+  
   private
   # This must be extracted to a test utility gem that can be  used with
   # any test framework

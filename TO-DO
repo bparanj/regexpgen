@@ -23,5 +23,23 @@ should generate :
 
 Mrs?\.?
 
+6.
 
+Need examples for:
+
+module Regexpgen
+ module Quantifier
+   ZERO_OR_MORE = '*'  
+   ONE_OR_MORE  = '+'
+ end
+ 
+ module Anchor
+   BEGINNING_OF_LINE             = '^'  
+   END_OF_LINE                   = '$'
+   BEGINNING_OF_STRING           = '\A'
+   END_OF_STRING                 = '\z'
+   END_OF_STRING_EXCEPT_NEW_LINE = '\Z'
+   WORD_BOUNDARY = '\b'
+ end
+end
 

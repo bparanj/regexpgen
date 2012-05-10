@@ -1,6 +1,11 @@
 module Regexpgen
+  
   class Component
-    WILD_CARD_CHARACTER = "."
+    WILD_CARD_CHARACTER = '.'
+    PLUS                = '+'
+    ASTERISK            = '*'
+    QUESTION_MARK       = '?'
+    CARET               = '^'
     
     @@special_characters = ["?", "^", "$", "/", "\\", "[", "]", "{", "}", "(", ")", "+", "*", "." ]
 
@@ -54,15 +59,36 @@ module Regexpgen
     end
     
     def self.match_any_character_except(exclude)
-      "[^#{exclude}]"
+      "[#{CARET}#{exclude}]"
     end
     
     def self.match_zero_or_one(character)
-      "#{character}?"
+      "#{character}#{QUESTION_MARK}"
+    end
+
+    def self.match_zero_or_more(character)
+      "#{character}#{ASTERISK}"
+    end
+    
+    def self.match_one_or_more(character)
+      "#{character}#{PLUS}"
+    end
+    
+    def self.match_digits_exactly(repetition)
+      "\\d{#{repetition}}"
+    end
+    
+    def self.match_digits_with_range(lower, upper)
+      "\\d{#{lower},#{upper}}"
+    end
+    
+    def self.match_n_or_more(minimum)
+      "\\d{#{minimum},}"
     end
     
     def self.match_any_non_whitespace_character
       '\S'
     end
+    
   end
 end
