@@ -1,6 +1,6 @@
 # Regexpgen
 
-Ruby DSL to generate regular expressions
+Ruby DSL to generate regular expressions. Regular expressions are difficult to use, difficult to read, opaque, unmaintainable, and ultimately counterproductive. This gem will address these issues.
 
 ## Installation
 
