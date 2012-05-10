@@ -17,7 +17,7 @@ describe "Examples of patterns" do
     
     SPECIAL_CHARACTERS = ["?", "^", "$", "/", "\\", "[", "]", "{", "}", "(", ")", "+", "*", "." ]
     
-    verify_data_set(SPECIAL_CHARACTERS) do |special_character|
+    data_driven_spec(SPECIAL_CHARACTERS) do |special_character|
       result = Regexpgen::Component.match_this_character(special_character)
       result.should == "\\#{special_character}"      
     end  
@@ -86,7 +86,7 @@ describe "Examples of patterns" do
   private
   # This must be extracted to a test utility gem that can be  used with
   # any test framework
-  def verify_data_set(container)
+  def data_driven_spec(container)
     container.each do |element|
       yield(element)
     end

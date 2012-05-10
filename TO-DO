@@ -1,3 +1,27 @@
 1. Scan a string for multiple occurrences of a pattern
 2. Substitute a replacement string for a substring
 3. Split a string into multiple substrings based on a matching separator.
+4.
+
+First some alphabetical characters,
+then a comma,
+then some alphabetical characters,
+then a comma,
+then either 'Mr.' or 'Mrs.'
+
+should generate :
+
+[A-Za-z]+,[A-Za-z]+,Mrs?\.
+
+5.
+
+The character M, followed by the character r, followed by
+zero or one of the character s, followed by
+zero or one of the character '.'
+
+should generate :
+
+Mrs?\.?
+
+
+
