@@ -86,6 +86,10 @@ module Regexpgen
       "\\d{#{minimum},}"
     end
     
+    def self.match_begins_with
+      '\A'
+    end
+    
     def self.match_any_non_whitespace_character
       '\S'
     end
