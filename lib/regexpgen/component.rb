@@ -90,6 +90,10 @@ module Regexpgen
       '\A'
     end
     
+    def self.match_does_not_begin_with
+      CARET
+    end
+    
     def self.match_any_non_whitespace_character
       '\S'
     end

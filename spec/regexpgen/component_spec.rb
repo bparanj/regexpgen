@@ -115,6 +115,10 @@ module Regexpgen
       result.should == '\A'                                    
     end
 
+    it "should match beginning of the string" do
+      result = Component.match_does_not_begin_with
+      result.should == '^'                                    
+    end    
 
     private
     # This must be extracted to a test utility gem that can be  used with
