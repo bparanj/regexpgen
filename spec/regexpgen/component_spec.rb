@@ -115,6 +115,11 @@ module Regexpgen
       result.should == '\A'                                    
     end
 
+    it "should match word boundary" do
+      result = Component.match_word_boundary
+      result.should == '\b'                                    
+    end    
+
     it "should match beginning of the string" do
       result = Component.match_does_not_begin_with
       result.should == '^'                                    

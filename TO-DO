@@ -1,6 +1,10 @@
 1. Scan a string for multiple occurrences of a pattern
 2. Substitute a replacement string for a substring
 3. Split a string into multiple substrings based on a matching separator.
+
+
+--------------------------
+
 4.
 
 First some alphabetical characters,
@@ -15,6 +19,8 @@ should generate :
 
 5.
 
+----------------------------------------------------
+
 The character M, followed by the character r, followed by
 zero or one of the character s, followed by
 zero or one of the character '.'
@@ -22,6 +28,8 @@ zero or one of the character '.'
 should generate :
 
 Mrs?\.?
+
+----------------------------------------------------
 
 6.
 
@@ -42,4 +50,97 @@ module Regexpgen
    WORD_BOUNDARY = '\b'
  end
 end
+
+----------------------------------------------------
+
+Metacharacters
+
+CARET  				= ^ -> Start          Negate
+DOLLAR 				= $ -> End
+DOT    				= . -> Wildcard
+BAR    				= | -> Or
+
+QUESTION_MARK = ? -> Zero or one
+PLUS          = + -> One or more
+ASTERISK      = * -> Zero or more
+
+INTERVAL = {min, max}  Min required, max allowed
+
+----------------------------------------------------
+
+Control Characters
+
+ALERT = '\a'
+BACKSPACE = '\b'
+Escape = '\e'
+Form Feed = '\f'
+Newline = '\n'
+Carriage Return = '\r'
+Horizontal Tab = '\t'
+Vertical Tab = '\v'
+
+----------------------------------------------------
+
+Class Shorthand
+
+Digit = '\d'
+Non Digit = 'D'
+Word = '\w'
+Non word = '\W'
+Whitespace = '\s'
+Non whitespace' = '\S'
+
+----------------------------------------------------
+
+Anchor
+
+match at start of string ^
+match after any newline ^
+match at end of string $
+match before string-ending newline $
+match before any newline $
+
+----------------------------------------------------
+
+Word Boundary \b
+Not Word Boundary \B
+
+----------------------------------------------------
+
+Mode Modifier
+
+Case Insensitive = i
+Free-spacing and comments = x
+Dot-matches-all = s
+Enhanced line-anchor = m
+
+----------------------------------------------------
+
+
+
+----------------------------------------------------
+
+Beginning of a line,
+followed by c,
+followed by a,
+follwed by t
+
+should generate:
+
+[^cat]
+
+----------------------------------------------------
+
+Beginning of a line,
+followed by c,
+followed by a,
+follwed by t
+followed by end of the line
+
+should generate:
+
+[^cat$]
+
+----------------------------------------------------
+
 

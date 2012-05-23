@@ -94,6 +94,10 @@ module Regexpgen
       CARET
     end
     
+    def self.match_word_boundary
+      '\b'
+    end
+    
     def self.match_any_non_whitespace_character
       '\S'
     end
