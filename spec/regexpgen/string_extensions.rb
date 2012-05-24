@@ -1,6 +1,6 @@
 class String
   def has_match?(input)
-    eval("\"#{self}\" =~ \/#{input}\/")
+    self =~ Regexp.new(input)
   end
 end  
 
